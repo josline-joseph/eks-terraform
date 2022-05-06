@@ -1,0 +1,8 @@
+1)	AWS Resources Required
+a.	VPC with public and private subnet in ohio region (10.99.0.0/16), Security groups with required inbound and outbound access.
+b.	EKS with nodegroups in public and private subnet
+i.	private_subnets      = ["10.99.1.0/24", "10.99.2.0/24", "10.99.3.0/24"]
+ii.	public_subnets       = ["10.99.4.0/24", "10.99.5.0/24", "10.99.6.0/24"]
+
+
+c) git@github.com:josline-joseph/eks-terraform.git

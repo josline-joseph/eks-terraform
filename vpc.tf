@@ -5,6 +5,7 @@ variable "region" {
 
 provider "aws" {
   region = var.region
+  profile = "non-prod"
 }
 
 data "aws_availability_zones" "available" {}
@@ -23,10 +24,10 @@ module "vpc" {
   version = "3.2.0"
 
   name                 = "education-vpc"
-  cidr                 = "10.0.0.0/16"
+  cidr                 = "10.99.0.0/16"
   azs                  = data.aws_availability_zones.available.names
-  private_subnets      = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
+  private_subnets      = ["10.99.1.0/24", "10.99.2.0/24", "10.99.3.0/24"]
+  public_subnets       = ["10.99.4.0/24", "10.99.5.0/24", "10.99.6.0/24"]
   enable_nat_gateway   = true
   single_nat_gateway   = true
   enable_dns_hostnames = true
